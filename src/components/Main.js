@@ -6,7 +6,7 @@ export default function Main() {
   const url = 'http://localhost:3000/api/post';
   const getPosts = async () => {
     const { data } = await axios.get(url);
-    console.log(data);
+    setPosts(data.posts);
   };
   useEffect(() => {
     getPosts();
@@ -15,16 +15,17 @@ export default function Main() {
     <div className="container">
       <div className="row">
         <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="post-preview">
-            <a href="post.html">
-              <h2 className="post-title">
-                Science has not yet mastered prophecy
-              </h2>
-            </a>
-            <p className="post-meta">on August 24, 2019</p>
-          </div>
-          <hr />
-
+          {posts
+            && posts.map((post) => (
+              <div className="post-preview">
+                <a href="post.html">
+                  <h2 className="post-title">
+                    {post.title}
+                  </h2>
+                </a>
+                <p className="post-meta">{post.date}</p>
+              </div>
+            ))}
           <div className="clearfix">
             <a
               className="btn btn-primary float-right"
