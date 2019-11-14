@@ -1,16 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-export default function TagList() {
-  const [tags, setTags] = useState(null);
-  const url = 'http://localhost:3000/api/tag';
-  const getTag = async () => {
-    const { data } = await axios.get(url);
-    setTags(data.tags);
-  };
-  useEffect(() => {
-    getTag();
-  }, []);
+export default function TagList({ tags }) {
   return (
     <section>
       <ul>
