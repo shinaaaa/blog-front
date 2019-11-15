@@ -1,0 +1,6 @@
+.tag {
+  cursor: pointer;
+}
+.tag-active {
+  color: orange;
+}
