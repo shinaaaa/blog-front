@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Main from './Main';
 import TagList from './TagList';
-import { localURL } from '../config';
+import { baseURL } from '../config';
 
 export default function Home() {
   const [posts, setPosts] = useState(null);
@@ -11,12 +11,12 @@ export default function Home() {
   const [page, setPage] = useState(1);
 
   const getPosts = async (p = 1) => {
-    const url = `${localURL}/api/post?page=${p}`;
+    const url = `${baseURL}/api/post?page=${p}`;
     const { data } = await axios.get(url);
     setPosts(data.posts);
   };
   const getPostsByTag = async (tag_id) => {
-    const url = `${localURL}/api/post?tag=${tag_id}`;
+    const url = `${baseURL}/api/post?tag=${tag_id}`;
     const { data } = await axios.get(url);
     setPosts(data.posts);
   };
@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   const getTags = async () => {
-    const url = `${localURL}/api/tag`;
+    const url = `${baseURL}/api/tag`;
     const { data } = await axios.get(url);
     setTags(data.tags);
   };
