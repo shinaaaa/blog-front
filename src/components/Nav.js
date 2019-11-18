@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Nav() {
+export default function Nav({ isLoggedIn, setIsLoggedIn, setIsAdmin }) {
+  const logout = () => {
+    document.cookie = `Authorization=; exprires=${new Date().toUTCString()}`;
+    setIsLoggedIn(false);
+    setIsAdmin(false);
+  };
+  useEffect(() => {
+    setIsLoggedIn(document.cookie.includes('Authorization'));
+  }, []);
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top"
@@ -29,9 +37,9 @@ export default function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
+              {isLoggedIn ? <a className='nav-link' onClick={logout}>로그아웃</a> : <Link className="nav-link" to="/login">
                 로그인
-              </Link>
+              </Link>}
             </li>
           </ul>
         </div>
