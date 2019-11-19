@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
             </ul>
             <p className="copyright text-muted">
-              Copyright &copy; 화곡동 페이커 2019
+              Copyright &copy; 신 Blog 2019
             </p>
           </div>
         </div>

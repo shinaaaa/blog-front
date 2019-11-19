@@ -29,14 +29,14 @@ export default function Login({ setIsLoggedIn, setIsAdmin, history }) {
         <small>{loginState === 'failed' && '이메일 혹은 비밀번호를 추가해 주세요'}</small>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" className="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-secondary" onClick={() => history.pushState('/join')}>회원가입</button>
+        <button type="button" class="btn btn-secondary" onClick={() => history.push('/Join')}>회원가입</button>
       </form>
     </>
   );
