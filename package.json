@@ -9,15 +9,17 @@
     "eslint-config-airbnb": "^18.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-markdown": "^4.2.2",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-textarea-autosize": "^7.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://mern-binsansong-blog-front --profile=binsansong"
+    "deploy": "aws s3 sync ./build s3://shin-blog-test --profile=shinkim"
   },
   "eslintConfig": {
     "extends": [
