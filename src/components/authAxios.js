@@ -1,6 +1,8 @@
-import axios from "axios";
-import getCookie from "./getCookie";
+import axios from 'axios';
+import getCookie from './getCookie';
 
-export default axios.create({
-  headers: { Authorization: getCookie("Authorization") }
-});
+export default function () {
+  return axios.create({
+    headers: { Authorization: getCookie('Authorization') },
+  });
+}

@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://mern-binsansong-blog-front --profile=binsansong"
+    "deploy": "aws s3 sync ./build s3://shin-blog-test --profile=shinkim"
   },
   "eslintConfig": {
     "extends": [
